@@ -31,6 +31,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_PSCR,  KC_TRNS,              KC_UP,        KC_MUTE,      KC_VOLD,      KC_VOLU,   KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, QK_CLEAR_EEPROM,
         KC_DEL,   KC_LEFT,            KC_DOWN,      KC_RGHT,      KC_BRID,      KC_BRIU,   KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,          KC_TRNS,
         KC_LSFT,                      KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_MPLY,  KC_MPRV,  KC_MNXT, KC_TRNS, KC_TRNS, KC_TRNS,          KC_RSFT,
-        KC_LGUI,  KC_TRNS,            KC_TRNS,                                               KC_MPLY,                              KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS
+        KC_LGUI,  VK_TOGG,            KC_TRNS,                                               KC_MPLY,                              KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS
         )
 };
+
+#include <oled/oled.c>
