@@ -1,4 +1,3 @@
-
 #define FRAME_DURATION 333
 uint32_t timer = 0;
 uint8_t current_frame = 0;  

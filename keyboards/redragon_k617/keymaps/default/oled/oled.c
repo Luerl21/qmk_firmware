@@ -5,6 +5,8 @@
     #include <oled/images.c>
     #include <oled/bootlogo.c>
     #include <oled/arasaka.c>
+    
+    #include <keyboard.c>
 
     /////////////////////////// Boot logo
         void keyboard_pre_init_user(void) {
@@ -56,8 +58,11 @@
             default:
                 oled_scroll_off();
                 if(value != 8 && rotation_oled == 2){
-                    // soft_reset_keyboard();
+                    values_save();
+                    soft_reset_keyboard();
                 }
+                if(value != 1){
+                    cls = false;}
                 if (value == 0){
 
                 if (get_current_wpm() != 000) {
@@ -165,10 +170,15 @@
                 if(value == 4){
                     oled_write_raw_P(EYE, sizeof(EYE));
                 }
+                if(value == 5){
+                    oled_write_raw_P(redragon[0], 636);
+                }
                 if(value == 8){
                     if(rotation_oled == 1){
-                        // soft_reset_keyboard();
+                        values_save();
+                        soft_reset_keyboard();
                     }
+                    // oled_set_brightness(0);
                     arasaka_draw();
                 }
             break;  
@@ -181,6 +191,6 @@
             } else {
                 render();
             }
-    return true;
+    return false;
     }
 #endif
