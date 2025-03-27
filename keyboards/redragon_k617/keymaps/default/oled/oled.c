@@ -173,12 +173,14 @@
                 if(value == 5){
                     oled_write_raw_P(redragon[0], 636);
                 }
+                if(value == 6){
+                }
                 if(value == 8){
                     if(rotation_oled == 1){
                         values_save();
                         soft_reset_keyboard();
                     }
-                    // oled_set_brightness(0);
+                    oled_set_brightness(0);
                     arasaka_draw();
                 }
             break;  
@@ -186,7 +188,7 @@
     }
 
     bool oled_task_user(void) {
-            if(test && rotation_oled == 1){
+        if(test && rotation_oled == 1){
                 bootlogo();
             } else {
                 render();
