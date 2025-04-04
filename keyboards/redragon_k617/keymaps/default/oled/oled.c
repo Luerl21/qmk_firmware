@@ -5,6 +5,7 @@
     #include <oled/images.c>
     #include <oled/bootlogo.c>
     #include <oled/arasaka.c>
+    #include <oled/repo.c>
     
     #include <keyboard.c>
 
@@ -174,6 +175,7 @@
                     oled_write_raw_P(redragon[0], 636);
                 }
                 if(value == 6){
+                    render_character();
                 }
                 if(value == 8){
                     if(rotation_oled == 1){
