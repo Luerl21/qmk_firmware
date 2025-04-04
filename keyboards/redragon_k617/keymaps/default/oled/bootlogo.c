@@ -200,6 +200,7 @@ static void bootlogo(void) {
                         if(current_frame == 4) {
                             test = false;
                             current_frame = 0;
+                            oled_clear();
                         }
                     }
 }

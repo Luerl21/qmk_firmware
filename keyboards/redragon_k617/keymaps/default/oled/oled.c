@@ -19,7 +19,7 @@
     uint8_t rotation_oled = 0;
     oled_rotation_t oled_init_user(oled_rotation_t rotation) {
                         int value = g_config.animation;
-                        if(value == 8) { 
+                        if(value == 7) { 
                             rotation_oled = 2;
                             return OLED_ROTATION_270;
                         }
@@ -58,7 +58,7 @@
             break;
             default:
                 oled_scroll_off();
-                if(value != 8 && rotation_oled == 2){
+                if(value != 7 && rotation_oled == 2){
                     values_save();
                     soft_reset_keyboard();
                 }
@@ -177,7 +177,7 @@
                 if(value == 6){
                     render_character();
                 }
-                if(value == 8){
+                if(value == 7){
                     if(rotation_oled == 1){
                         values_save();
                         soft_reset_keyboard();
